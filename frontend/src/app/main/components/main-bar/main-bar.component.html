@@ -1,0 +1,33 @@
+<div id="carouselExampleTouch" class="carousel slide carousel-fade carousel-dar" data-mdb-touch="false">
+    <div class="carousel-indicators">
+
+        <ng-container *ngFor="let item of carousel$ | async; let i=index;">
+            <button type="button"
+                    data-mdb-target="#carouselExampleTouch"
+                    [attr.data-mdb-slide-to]="i"
+                    [class.active]="i == 0" [attr.aria-current]="{ 'true': i == 0 }"
+                    [attr.aria-label]="i">
+            </button>
+        </ng-container>
+
+    </div>
+
+    <div class="carousel-inner shadow-4-strong">
+
+        <ng-container *ngFor="let item of carousel$ | async; let i = index;">
+            <div class="carousel-item" [class.active]="i == 0" data-mdb-interval="3000"
+                [style.background-image]="'url(./assets/images/carousel/' + item.name + ')'">
+            </div>
+        </ng-container>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleTouch" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleTouch" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

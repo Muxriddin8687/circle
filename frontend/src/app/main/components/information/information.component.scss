@@ -1,0 +1,25 @@
+.fun-facts {
+    position: relative;
+    overflow-x: hidden;
+
+    .counter {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+    
+            &:after {
+                content: '+';
+                margin-left: 5px;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+    }
+}

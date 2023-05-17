@@ -1,0 +1,20 @@
+<div class="container mb-5">
+    <h2 class="section-title">Aloqa uchun ma'lumotlar</h2>
+    <form #f="ngForm" (ngSubmit)="save(f)">
+        <div class="row">
+
+            <div class="mx-auto col-11 col-sm-12">
+                <input name="address" [(ngModel)]="address" placeholder="To'liq manzilni kiriting" type="text" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="phone" [(ngModel)]="phone" placeholder="Telefon raqam" type="text" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="email" [(ngModel)]="email" placeholder="Emailingizni kiriting" type="email" class="form-control mb-4" required minlength="5">
+            </div>
+
+        </div>
+        <button [disabled]="f.invalid" type="submit" class="btn btn-info text-light ms-auto d-block">Saqlash</button>
+    </form>
+
+</div>

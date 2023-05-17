@@ -1,0 +1,34 @@
+<footer>
+    <hr class="my-0">
+
+    <div class="py-3">
+        <div class="container" *ngFor="let contact of contactList$ | async">
+            <div class="row">
+                <div class="mx-auto col-11 col-sm-10 col-md-4 col-lg-4 mt-2">
+                    <img src="../../../../assets/logo/logo.png" width="200px" alt="Logo image">
+                </div>
+                <div class="mx-auto col-11 col-sm-10 col-md-4 col-lg-4 mt-2">
+                    <div class="d-flex">
+                        <i class="fa fa-phone me-2 mt-1"></i>
+                        <a href="tel:{{ contact.phone }}" class="nav-link">{{ contact.phone }}</a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa fa-envelope me-2 mt-1"></i>
+                        <a href="mailto:{{ contact.email }}" class="nav-link">{{ contact.email }}</a>
+                    </div>
+                </div>
+                <div class="mx-auto col-11 col-sm-10 col-md-4 col-lg-4 mt-2">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-map-location-dot me-2 mt-1"></i>
+                        <p class="nav-link">{{ contact.address }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container footer-copyright py-3 text-center">
+        © {{ date | date:'YYYY' }} Copyright by <a href="#" class="text-info" target="_blank"> UBTUIT</a>
+    </div>
+</footer>

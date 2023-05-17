@@ -1,0 +1,45 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="mx-auto col-11 col-sm-10 col-md-8 col-lg-7" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <!-- carousel -->
+
+            <div style="margin-bottom: 100px;">
+                <div *ngIf="circle['0']?.images!.length > 0"
+                    id="carouselExampleCaptions"
+                    data-mdb-ride="carousel"
+                    class="carousel slide carousel-fade"
+               >
+
+                   <!-- slider images -->
+                   <div class="carousel-inner shadow">
+                       <div *ngFor="let item of circle[0]['images']; let k = index;" [class.active]="k == 0" class="carousel-item">
+                           <img [src]="imgPath + item" alt="Car image" class="d-block w-100">
+                       </div>
+                   </div>
+
+                   <!-- Indicators -->
+                   <ol class="carousel-indicators" >
+                       <li *ngFor="let item of circle[0]['images']; let k = index;"
+                           data-mdb-target="#carouselExampleCaptions"
+                           [attr.data-mdb-slide-to]="k"
+                           [class.active]="k == 0"
+                           aria-current="true"
+                       >
+                           <img [src]="imgPath + item" class="d-block w-100" alt="Car image">
+                       </li>
+                   </ol>
+               </div>
+            </div>
+
+            <div class="custom-block-info" *ngFor="let item of circle">
+                <h3 class="mb-3">{{ circle[0]['name'] }}</h3>
+
+                <p class="text-dark mb-0"><b>Davomiyligi:</b> {{ circle[0]['duration'] }}</p>
+                <p class="text-dark mb-0"><b>Dars kunlari:</b> {{ circle[0]['when'] }}</p>
+                <p class="text-dark "><b>Narxi:</b> {{ circle[0]['price'] }} so'm</p>
+
+                <p>{{ circle[0]['text'] }}</p>
+            </div>
+        </div>
+    </div>
+</div>

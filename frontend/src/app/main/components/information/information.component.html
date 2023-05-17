@@ -1,0 +1,30 @@
+<section class="fun-facts mt-5" *ngFor="let item of home$ | async">
+    <div class="container" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <h2>{{ item.allPupils }}</h2>
+                    <p class="count-text ">Umumiy yutuqlar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <h2>{{ item.activePupils }}</h2>
+                    <p class="count-text ">O'qiyotgan o'quvchilar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <h2>{{ item.employees }}</h2>
+                    <p class="count-text ">Hodimlar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter end">
+                    <h2>{{ item.year }}</h2>
+                    <p class="count-text ">Yillik tajriba</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

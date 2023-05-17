@@ -1,0 +1,48 @@
+<div class="container">
+    <h2 class="section-title">To'garakning tafsilotlari</h2>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="row">
+                <ng-container *ngIf="image.length > 0">
+                    <div *ngFor="let item of image" class="circle-img col-11 col-sm-6 col-md-4 col-lg-3 mx-auto mb-2">
+                        <img [src]="imagePath + item" class="img-fluid h-100" alt="circle image" loading="lazy">
+                        <button class="btn btn-danger" (click)="deleteImage( item )">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-11 col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <div class="mt-3 border py-3 text-center rounded">
+                    <p>File turi: JPG, JPEG, PNG</p>
+                    <p>Hajmi: 0 ~ 5 MB</p>
+                    <input type="file" (change)="onFileChange($event)" accept=".png,.jpeg,.jpg" required #mainImage class="d-none">
+                    <button class="btn btn-primary" (click)="mainImage.click()">Rasm tanlash</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-4">
+            <form #f="ngForm" (ngSubmit)="update(f)">
+                <div class="col-11 col-sm-10 col-md-6 mx-auto mb-4">
+                    <input type="text" name="subject" placeholder="Nomi" [(ngModel)]="subject" class="form-control mb-4" minlength="5" required>
+                </div>
+                <div class="col-11 col-sm-10 col-md-6 mx-auto mb-4">
+                    <input type="text" name="duration" placeholder="Davomiyligi" [(ngModel)]="duration" class="form-control mb-4" minlength="4" required>
+                </div>
+                <div class="col-11 col-sm-10 col-md-6 mx-auto mb-4">
+                    <input type="text" name="when" placeholder="Dars kunlar" [(ngModel)]="when" class="form-control mb-4" minlength="5" required>
+                </div>
+                <div class="col-11 col-sm-10 col-md-6 mx-auto mb-4">
+                    <div class="input-group">
+                        <input type="text" name="price" placeholder="Narxi" [(ngModel)]="price" aria-describedby="basic-addon2" class="form-control mb-4" minlength="5" required>
+                        <span class="input-group-text" id="basic-addon2">so'm</span>
+                    </div>
+                </div>
+
+                <textarea name="text" rows="6" placeholder="Ma'lumot" [(ngModel)]="text" class="form-control mb-4" required></textarea>
+                <button [disabled]="f.invalid" type="submit" class="btn btn-primary d-block ms-auto">Saqlash</button>
+            </form>
+        </div>
+    </div>
+</div>

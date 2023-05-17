@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800");
+
+
+:root {
+    --white: #fff;
+    --light: #f5f5f5;
+    --main-light: #f1f1f1;
+
+    --black: #000;
+    --dark: #081F46;
+    --main-dark: #6d6d6f;
+
+    --theme-1: #C8B568;
+    --theme-2: #12c4f1;
+    --theme-2-light: #8ac9d9;
+    --theme-2-dark: #1189a7;
+}
+
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+input,
+label,
+button,
+textarea {
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+
+body {
+    min-width: 350px;
+}
+
+
+h2.section-title {
+    color: var(--theme-2) !important;
+    font-weight: 700;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.text-dark {
+    color: var(--dark) !important;
+}
+
+.text-black {
+    color: var(--black) !important;
+}
+
+
+.table>:not(caption)>*>* {
+    padding: 10px 15px;
+}
+
+
+.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.card .card-body {
+    .card-title {
+        overflow-y: hidden;
+        height: 25px;
+    }
+    .card-text {
+        overflow-y: hidden;
+        height: 100px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    h2.section-title {
+        font-weight: 600;
+        margin-top: 60px;
+        margin-bottom: 25px;
+    }
+}

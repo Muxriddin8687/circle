@@ -1,0 +1,8 @@
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
+    height: calc(100vh - 70px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}

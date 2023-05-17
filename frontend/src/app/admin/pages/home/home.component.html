@@ -1,0 +1,94 @@
+<div class="container">
+    <h2 class="section-title">Carousel</h2>
+    <div class="row">
+        <ng-container *ngFor="let item of imageList">
+            <div class="mx-auto gallery-img col-11 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
+                <img [src]="imgUrl + item.name" loading="lazy" priority class="img-fluid" alt="Gallery image">
+                <button class="btn btn-danger" (click)="deleteImage( item.name )">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+        </ng-container>
+
+
+        <div class="mx-auto col-11 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
+            <div class="h-100 border py-3 text-center rounded">
+                <p>File turi: JPG, JPEG, PNG</p>
+                <p>Hajmi: 0 ~ 5 MB</p>
+                <input type="file" (change)="onFileChange($event)" accept=".png,.jpeg,.jpg" #file class="d-none">
+                <button class="btn btn-info" (click)="file.click()">Rasm tanlash</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="short-about-us">
+    <div class="container">
+        <h2 class="section-title">Qisqacha ma'lumot</h2>
+        <div class="row">
+            <div class="col-md-6 gx-5 mb-4">
+                <ng-container *ngIf="image.length > 3;">
+                    <div class="bg-image gallery-img hover-overlay ripple shadow-2-strong rounded-5"
+                        data-mdb-ripple-color="light">
+                        <img [src]="imgUrl + image" class="img-fluid img-overlay" />
+                    </div>
+                </ng-container>
+
+                <div class="mt-3 border py-3 text-center rounded">
+                    <p>File turi: JPG, JPEG, PNG</p>
+                    <p>Hajmi: 0 ~ 5 MB</p>
+                    <input type="file" (change)="onFileChangeAbout($event)" accept=".png,.jpeg,.jpg" #mainImage
+                        class="d-none">
+                    <button class="btn btn-info" (click)="mainImage.click()">Rasm tanlash</button>
+                </div>
+            </div>
+
+            <div class="col-md-6 gx-5 mb-4">
+                <form #f="ngForm">
+                    <input type="text" name="title" [(ngModel)]="title" placeholder="Mavzu" class="form-control mb-4" />
+                    <textarea class="form-control mb-4" placeholder="Matn" name="fulltext" [(ngModel)]="text"
+                        rows="5"></textarea>
+                    <button (click)="saveMainData()" class="btn btn-info d-block ms-auto">Saqlash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="fun-facts my-5">
+    <div class="container">
+        <h2 class="section-title">Informatsiya</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <input name="allPupils" [(ngModel)]="allPupils" class="form-control" type="number"
+                        placeholder="20" />
+                    <p class="count-text ">Umumiy o'quvchilar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <input name="activePupils" [(ngModel)]="activePupils" class="form-control" type="number"
+                        placeholder="20" />
+                    <p class="count-text ">O'qiyotgan o'quvchilar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                    <input name="employees" [(ngModel)]="employees" class="form-control" type="number"
+                        placeholder="20" />
+                    <p class="count-text ">Hodimlar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter end">
+                    <input name="year" [(ngModel)]="year" class="form-control" type="number" placeholder="20" />
+                    <p class="count-text ">Yillik tajriba</p>
+                </div>
+            </div>
+        </div>
+        <button (click)="saveMainData()" class="btn btn-info d-block ms-auto">Saqlash</button>
+    </div>
+</section>
